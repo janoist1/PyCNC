@@ -470,6 +470,8 @@ class GMachine(object):
         elif c == 'M83':  # relative mode for extruder
             if self._absoluteCoordinates:
                 raise GMachineException("Not supported, use G90/G91")
+        elif c == 'G29':  # auto Bed Levelling
+            pass
         else:
             raise GMachineException("unknown command")
         # save parameters on success
